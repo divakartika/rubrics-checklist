@@ -1,0 +1,30 @@
+Topic,Category,Subcategory,Checks,Max Point,Earned
+Data Preprocess and Exploratory Data Analysis,"Demonstrate and explain how to apply some data preprocessing to make sure that your data is “ready”, such as handling outlier.",What data preprocessing that you do?,FALSE,2,0
+,,Is there any outlier?,FALSE,,
+,,Do you need to scale the features or the target?,FALSE,,
+,Explore the relation between the target and the features.,Is strength positively correlated with age?,FALSE,2,0
+,,Is strength and cement has strong correlation?,FALSE,,
+,,Is super_plast has a linear correlation with the strength?,FALSE,,
+Model Fitting and Evaluation,Demonstrate how to prepare cross-validation data for this case.,What is the proportion of the training vs testing dataset?,FALSE,2,0
+,Demonstrate how to properly do model fitting and evaluation.,What model do you use?,FALSE,2,0
+,,How do you evaluate the model?,FALSE,,
+,,Is your model overfit?,FALSE,,
+,Compare multiple data preprocess approach.,Do you need to normalize the data?,FALSE,4,0
+,,Do you need to log-transform or scale the variables with square root?,FALSE,,
+,Compare multiple model.,Build at least 2 models or build a model then tune the parameter later.,FALSE,4,0
+,,"If the model is not satisfactory, what will you do to tune the model?",FALSE,,
+,,Is the tuned model perform better?,FALSE,,
+Prediction Performance,MAE in (your own) validation dataset reach < 4.,MAE in (your own) validation dataset reach < 4.,FALSE,3,0
+,R-squared in (your own) validation dataset reach > 90%.,R-squared in (your own) validation dataset reach > 90%.,FALSE,3,0
+,MAE in test dataset reach < 4.,MAE in test dataset reach < 4.,FALSE,4,0
+,R-squared in test dataset reach > 90%.,R-squared in test dataset reach > 90%.,FALSE,4,0
+Interpretation,Use LIME method to interpret the model that you have used.,Do you need to scale back the data into original value in order to be more interpretable?,FALSE,2,0
+,,How many features do you use to explain the model?,FALSE,,
+,,What is the difference between using LIME compared to interpretable machine learning models such as Decision Tree or metrics such as Variable Importance in Random Forest?,FALSE,,
+,Interpret the first 4 observations of the plot.,What is the difference between interpreting black box model with LIME and using an interpretable machine learning model?,FALSE,2,0
+,,How good is the explanation fit? What does it signify?,FALSE,,
+,,What are the most and the least important factors for each observation?,FALSE,,
+Conclusion,Write the conclusion of your capstone project.,Is your goal achieved?,FALSE,2,0
+,,Is the problem can be solved by machine learning?,FALSE,,
+,,What model did you use and how is the performance?,FALSE,,
+,,What is the potential business implementation of your capstone project?,FALSE,,
