@@ -66,15 +66,17 @@ st.header("Feedback")
 student = st.text_input('Input Student Name', placeholder='Student Name')
 
 text_output = ""
-count = 0
-earned = int(fnb_major.loc[count, 'Earned'])
-max_point = int(fnb_major.loc[count, 'Max Point'])
-icon = '✅' if earned == max_point else '❌'
+c = 0
 
 for cat in cat_dict:
     text_output += cat + '\n'
     for value in cat_dict[cat]:
+        earned = int(fnb_major.loc[c, 'Earned'])
+        max_point = int(fnb_major.loc[c, 'Max Point'])
+        icon = '✅' if earned == max_point else '❌'
+        
         text_output += f"- {icon} [{earned}/{max_point}] {value}\n"
+        c +=1
     text_output += '\n\n'
 
 # read text from folder template_text, file example.txt
