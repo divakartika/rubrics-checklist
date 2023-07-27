@@ -29,13 +29,25 @@ for major in major_points:
 st.title(f"Case: {case}")
 st.header('Rubrics Checklist')
 
+if 'button' not in st.session_state:
+    st.session_state.button = False
+
+def click_button():
+    st.session_state.button = not st.session_state.button
+
+st.sidebar.button('Reset', on_click=click_button)
+
 # sequentially shows: Category, Major Point, and dataframes (small dataframes made above)
 for cat in cat_dict:
     st.subheader(cat)
     for value in cat_dict[cat]:
         st.write(value)
-        #convert dataframe to data_editor
-        fnb_editor = st.data_editor(list_df[count], key=f'df_{count}')
+        if st.session_state.button:
+            fnb_editor = st.data_editor(list_df[count], disabled=['Subpoints'], key=f'df_{count}{count}', hide_index=True)
+        else:
+            #convert dataframe to data_editor
+            fnb_editor = st.data_editor(list_df[count], disabled=['Subpoints'], key=f'df_{count}', hide_index=True)
+            
         # save all data_editor to list_editor
         list_editor.append(fnb_editor)
         # increase count to continue for loop of list_df
@@ -58,6 +70,7 @@ st.header(f"Final Score: {total_earned}/{total_points}")
 fnb_major
 
 # TODO: Reset button
+
 # TODO: Text generator
 
 st.divider()
@@ -74,7 +87,7 @@ for cat in cat_dict:
         earned = int(fnb_major.loc[c, 'Earned'])
         max_point = int(fnb_major.loc[c, 'Max Point'])
         icon = '✅' if earned == max_point else '❌'
-        
+
         text_output += f"- {icon} [{earned}/{max_point}] {value}\n"
         c +=1
     text_output += '\n\n'
