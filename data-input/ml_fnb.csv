@@ -1,4 +1,4 @@
-Category,Major Point,Subpoints,Checks,Max Point,Earned
+Topic,Category,Subcategory,Checks,Max Point,Earned
 Data Preprocess,Demonstrated and explain how to properly do data aggregation.,Do you need to aggregate/summarise the number of visitors before doing time series padding?,FALSE,2,0
 ,,Do you need to filter the time to certain hours after doing time series padding?,FALSE,,
 ,,Do you need to replace NA value?,FALSE,,
