@@ -1,0 +1,15 @@
+Dear Bapak/Ibu ${NAME},
+
+Terima kasih telah mengumpulkan Capstone Machine Learning, Case: ${CASE}. Berikut penilaian dan feedback yang dapat kami sampaikan berdasarkan capstone yang telah Bapak kerjakan:
+
+${POINTS}
+
+Berikut additional feedback dari kami:
+
+-
+
+Total skor yang Bapak peroleh adalah ${EARNED} dari 36, dan kami ucapkan selamat atas keberhasilannya dalam mengaplikasikan apa yang sudah dipelajari selama di kelas menjadi sebuah produk nyata. Keep up your good work!
+
+Best regards,
+
+Team Algoritma

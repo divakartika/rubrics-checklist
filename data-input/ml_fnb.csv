@@ -1,0 +1,26 @@
+Category,Major Point,Subpoints,Checks,Max Point,Earned
+Data Preprocess,Demonstrated and explain how to properly do data aggregation.,Do you need to aggregate/summarise the number of visitors before doing time series padding?,FALSE,2,0
+,,Do you need to filter the time to certain hours after doing time series padding?,FALSE,,
+,,Do you need to replace NA value?,FALSE,,
+,Demonstrate how to properly do time series padding.,Should you do time series padding?,FALSE,2,0
+,,Do you need to round the datetime into hour or minutes?,FALSE,,
+,,When is the start and the end of the time interval for time series padding?,FALSE,,
+Seasonality Analysis,Compare multiple time series decomposition approach.,"Can you decompose the time series into the observed data, trend, hourly seasonality, weekly seasonality, and the residuals?",FALSE,2,0
+,Reported interpretable hourly and weekly seasonality.,Can you create a better visualization of hourly and weekly seasonality?,FALSE,2,0
+,,How do you interpret the seasonality? Describe the interpretation.,FALSE,,
+Model Fitting and Evaluation,Demonstrate and explain how to prepare cross-validation data for this case.,Do you need to do cross validation before doing time series analysis?,FALSE,4,0
+,,How do you split the data into training and testing dataset?,FALSE,,
+,Demonstrate and explain how to properly do model fitting and evaluation.,What data preprocessing you used before fitting the model?,FALSE,4,0
+,,What time series model did you use?,FALSE,,
+,,Can you visualize the actual vs estimated number of visitors?,FALSE,,
+,,how to evaluate the model performance?,FALSE,,
+,Compare multiple model specifications.,How many forecasting model will you use?,FALSE,4,0
+,,Will you use exponential smoothing? Will you use ARIMA?,FALSE,,
+,,How to evaluate the model performance?,FALSE,,
+,,Can you visualize the actual vs estimated number of visitors?,FALSE,,
+Prediction Performance,Reached MAE < 6 in (your own) validation dataset.,Reached MAE < 6 in (your own) validation dataset.,FALSE,6,0
+,Reached MAE < 6 in test dataset.,Reached MAE < 6 in test dataset.,FALSE,6,0
+Conclusion,Assumption Checking,Does the model meet the autocorrelation assumption?,FALSE,4,0
+,,What about the normality of residuals?,FALSE,,
+,,"If the assumptions are not met, what is the cause? how to handle that?",FALSE,,
+,,Based on seasonality when the highest visitors?,FALSE,,
