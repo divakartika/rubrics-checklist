@@ -95,9 +95,9 @@ for topic in topic_dict:
 
 
 feedback = gen.generate_text(student,
-                                case,
-                                text_output,
-                                total_earned)
+                            case,
+                            text_output,
+                            total_earned)
 feedback
 # # read text from template.txt
 # with open('template.txt', mode='r', encoding='utf-8') as f:

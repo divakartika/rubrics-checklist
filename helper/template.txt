@@ -8,7 +8,7 @@ Berikut additional feedback dari kami:
 
 -
 
-Total skor yang Anda peroleh adalah ${EARNED} dari 36, dan kami ucapkan selamat atas keberhasilannya dalam mengaplikasikan apa yang sudah dipelajari selama di kelas menjadi sebuah produk nyata. Keep up your good work!
+Total skor yang Anda peroleh adalah ${EARNED} dari 36. ${FINAL_TEXT}
 
 Best regards,
 
