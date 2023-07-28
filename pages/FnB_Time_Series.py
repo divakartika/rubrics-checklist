@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from string import Template
+from helper import generator as gen
 
 # read data & data wrangling
 caps = pd.read_csv('data-input/ml_fnb.csv')
@@ -91,15 +92,10 @@ for topic in topic_dict:
         count_2 +=1
     text_output += '\n\n'
 
-# read text from template.txt
-with open('template.txt', mode='r', encoding='utf-8') as f:
-    content = f.read()
-    temp = Template(content)
-    feedback = temp.substitute(
-        NAME = student,
-        CASE = case,
-        POINTS = text_output,
-        EARNED = total_earned
-        )
 
+# read text from template.txt
+feedback = gen.generate_text(student,
+                                case,
+                                text_output,
+                                total_earned)
 feedback
