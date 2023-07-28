@@ -7,7 +7,7 @@ from string import Template
 
 locale.setlocale(locale.LC_TIME, 'id_ID.UTF-8')
 
-# 
+# cek
 def final_txt(total_earned):
     if total_earned > 28:
         text = "dan kami ucapkan selamat atas keberhasilannya dalam mengaplikasikan apa yang sudah dipelajari selama di kelas menjadi sebuah produk nyata. Keep up your good work!"
