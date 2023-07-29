@@ -1,0 +1,35 @@
+Topic,Category,Subcategory,Checks,Max Point,Earned
+Data Preprocess,Demonstrate and explain how to properly do data aggregation.,Should you floor the date to specific time level (minutes or hours or days)?,FALSE,2,0
+,,How do we group the data for aggregation/summarise?,FALSE,,
+,Demonstrate how to properly do time series padding.,Should you do time series padding?,FALSE,2,0
+,,Do you need to round the datetime into hour or minutes?,FALSE,,
+,,When is the start and the end of the time interval for time series padding?,FALSE,,
+Cross-Validation Scheme,Demonstrate and explain how to prepare cross-validation data for automated model selection.,How to cross-validate data for time series?,FALSE,2,0
+,,Do you need to group the data by the source area?,FALSE,,
+,,Do you need to make nested dataframe?,FALSE,,
+,,How many observations you will use as the testing dataset?,FALSE,,
+,Demonstrate and explain how to prepare cross-validation data for “best” model evaluation.,Do you need to further split the data train into training set and validation set?,FALSE,2,0
+,,How do you split them? Should you use rolling origin method?,FALSE,,
+,,How much of the data will be used as the validation set?,FALSE,,
+,,Do we forecast with windowed data or expanding data?,FALSE,,
+Automated Model Selection,Compare multiple preprocess specifications.,Is different preprocess will have diffrerent results?,FALSE,3,0
+,,How many kind of preprocess spesification you will prepare?,FALSE,,
+,,Will you choose 2 different speficiation: log transformation and square root transformation specification? Will you create another preprocess approach?,FALSE,,
+,Compare multiple seasonality specifications.,How many seasonality specification you will create?,FALSE,3,0
+,,Will you create model with daily sesasonality only?,FALSE,,
+,,Will you create multiple seasonality (daily and weekly)?,FALSE,,
+,Compare multiple model specifications.,How many forecasting model will you use?,FALSE,3,0
+,,Will you use exponential smoothing? Will you use ARIMA?,FALSE,,
+,Automate best specifications selection.,"Since we use multiple preprocess, seasonality, and models, can you make an automated script to summarise the result?",FALSE,3,0
+,,How do you measure the model performance?,FALSE,,
+,,Which model and specifications has the best performance?,FALSE,,
+Prediction Performance,Reached MAE < 12 for sub-area sxk97 in (your own) evaluation dataset.,Reached MAE < 12 for sub-area sxk97 in (your own) evaluation dataset.,FALSE,1,0
+,Reached MAE < 11 for sub-area sxk9e in (your own) evaluation dataset.,Reached MAE < 11 for sub-area sxk9e in (your own) evaluation dataset.,FALSE,1,0
+,Reached MAE < 10 for sub-area sxk9s in (your own) evaluation dataset.,Reached MAE < 10 for sub-area sxk9s in (your own) evaluation dataset.,FALSE,1,0
+,Reached MAE < 11 for all sub-area in (your own) evaluation dataset.,Reached MAE < 11 for all sub-area in (your own) evaluation dataset.,FALSE,1,0
+,Reached MAE < 12 for sub-area sxk97 in test dataset.,Reached MAE < 12 for sub-area sxk97 in test dataset.,FALSE,2,0
+,Reached MAE < 11 for sub-area sxk9e in test dataset.,Reached MAE < 11 for sub-area sxk9e in test dataset.,FALSE,2,0
+,Reached MAE < 10 for sub-area sxk9s in test dataset.,Reached MAE < 10 for sub-area sxk9s in test dataset.,FALSE,2,0
+,Reached MAE < 11 for all sub-area in test dataset.,Reached MAE < 11 for all sub-area in test dataset.,FALSE,2,0
+Conclusion,Assumption Checking,Does the model meet the autocorrelation assumption? What about the normality of residuals?,FALSE,4,0
+,,"If the assumptions are not met, what is the cause? how to handle that? Based on seasonality when the highest demand?",FALSE,,

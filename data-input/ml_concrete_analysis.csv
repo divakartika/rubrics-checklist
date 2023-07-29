@@ -1,0 +1,38 @@
+Topic,Category,Subcategory,Checks,Max Point,Earned
+Data Preprocess,"Demonstrate and explain how to apply some data transformations, scalling, handling outliers or any statistical approach here to make sure that your data is “ready”.",What do you use for data transformation? Log? Log10? Square root?,FALSE,2,0
+,,Why you choose those transformation method?,FALSE,,
+,,What variables that need to be transformed or scaled?,FALSE,,
+,,Is there any outlier in the target variable? Why should we care about outlier?,FALSE,,
+,Demonstrate and explain how to properly do feature engineering/ variabel selection.,Do you remove some variables? Why?,FALSE,2,0
+,,What method do you use to remove the variables?,FALSE,,
+Exploratory Data Analysis,Explore the relation between the target and the features,Is strength positively correlated with age?,FALSE,2,0
+,,Is strength and cement has strong correlation?,FALSE,,
+,,Is super_plast has a linear correlation with the strength?,FALSE,,
+,,Other exploratory activities,FALSE,,
+,Give informative insight from the visualization and/or any kind of your exploratory result.,How is the data distribution of each variables?,FALSE,2,0
+,,How is the correlation between features?,FALSE,,
+,,Other insight you’ve found,FALSE,,
+Model Fitting and Evaluation,Demonstrate how to prepare cross-validation data for this case.,What is the proportion of the training vs testing dataset?,FALSE,2,0
+,,How and why do you do a cross-validation scheme?,FALSE,,
+,Demonstrate how to properly do model fitting and evaluation.,What function do you use to build the model?,FALSE,3,0
+,,How do you evaluate the model performance?,FALSE,,
+Prediction Performance,MAE in (your own) validation dataset reach < 7.5.,MAE in (your own) validation dataset reach < 7.5.,FALSE,1,0
+,R-squared in (your own) validation dataset reach > 65%.,R-squared in (your own) validation dataset reach > 65%.,FALSE,1,0
+,MAE in test dataset reach < 7.5.,MAE in test dataset reach < 7.5.,FALSE,2,0
+,R-squared in test dataset reach > 65%.,R-squared in test dataset reach > 65%.,FALSE,2,0
+Model Interpretation and Improvement Idea(s),Reported the interpretation of each predictors and explain how much their effect to concrete compression strength.,How do you measure the effect of each predictors?,FALSE,4,0
+,,How do you interpret the standard error of each variables?,FALSE,,
+,,Is the predictor has significant effect on the concrete compression strength?,FALSE,,
+,Reported all of the assumption checking using the proper testing method and/or using any visualization.,"If there is any violation, explain why it happens (e.g. outliers existance, non-linear relationship, etc.) or if there is none, propose the method to improve the model performance (and why it works).",FALSE,4,0
+,Try improving the model to fulfill the assumptions,Do you need to transform the target variable?,FALSE,3,0
+,,Do you need to transform the features?,FALSE,,
+,,"Should you transform the data using log, square root, Box-Cox or any other method?",FALSE,,
+,,Explain your effort in improving the model and describe your result (achieved/not achieved).,FALSE,,
+Finding the Right Material Composition,Choose one from each ingredients or age and do a test to find out the difference for each composition.,Which predictors did you choose? Why?,FALSE,2,0
+,,How many class do you create for each ingredients or age?,FALSE,,
+,Do a test to find the right composition to get the maximum concrete compression strength.,What statistical test you use to find the difference of mean of concrete compression strength?,FALSE,2,0
+,,What is the optimal composition of ingredients or age to get maximum or higher concrete compression strength?,FALSE,,
+Conclusion,Write the conclusion of your capstone project.,Is your goal achieved?,FALSE,2,0
+,,Is the problem can be solved by machine learning?,FALSE,,
+,,What model did you use and how is the performance?,FALSE,,
+,,What is the potential business implementation of your capstone project?,FALSE,,
