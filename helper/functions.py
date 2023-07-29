@@ -4,6 +4,7 @@ from datetime import timedelta
 import locale
 import pandas as pd
 from string import Template
+import os
 
 locale.setlocale(locale.LC_ALL, 'id_ID.UTF-8')
 
@@ -26,7 +27,7 @@ def data_prep(caps):
     
     return caps_final, topic_dict, list_df
 
-# cek
+# check if score >= 28 (minimum score)
 def final_txt(total_earned):
     if total_earned >= 28:
         text = "dan kami ucapkan selamat atas keberhasilannya dalam mengaplikasikan apa yang sudah dipelajari selama di kelas terhadap real-world data. Keep up your good work!"
