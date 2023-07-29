@@ -1,6 +1,4 @@
 import streamlit as st
-import pandas as pd
-from string import Template
 from helper import functions as func
 
 def app(case, caps):

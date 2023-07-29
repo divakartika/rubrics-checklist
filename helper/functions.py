@@ -1,10 +1,7 @@
-# import streamlit as st
+import locale
+from string import Template
 from datetime import datetime
 from datetime import timedelta
-import locale
-import pandas as pd
-from string import Template
-import os
 
 locale.setlocale(locale.LC_ALL, 'id_ID.UTF-8')
 

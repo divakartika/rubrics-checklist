@@ -1,7 +1,4 @@
-import streamlit as st
 import pandas as pd
-from string import Template
-from helper import functions as func
 from helper import template_app as temp_app
 
 # capstone case
