@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from string import Template
 from helper import functions as func
-import os
 
 case = 'FnB Time Series'
 
@@ -17,15 +16,6 @@ count = 0
 # title & header
 st.title(f"Case: {case}")
 st.header('Rubrics Checklist')
-
-# configure table of content
-filename = os.path.basename(__file__)[:-3]
-text = f"""Table of Content  
-- [Rubrics Checklist](https://rubrics-checklist.streamlit.app/{filename}#rubrics-checklist)
-- [Final Score](https://rubrics-checklist.streamlit.app/{filename}#final-score-0-36)
-- [Feedback](https://rubrics-checklist.streamlit.app/{filename}#feedback)"""
-
-st.sidebar.write(text)
 
 # configure reset button
 if 'button' not in st.session_state:
