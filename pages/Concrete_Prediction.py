@@ -1,31 +1,17 @@
 import streamlit as st
 import pandas as pd
 from string import Template
-from helper import generator as gen
+from helper import functions as func
 
 case = 'Concrete Prediction'
 
-# read data & data wrangling
+# read data & data preparation
 caps = pd.read_csv('data-input/ml_concrete_pred.csv')
-caps_clean = caps.ffill()
-caps_topic = caps_clean[['Topic', 'Category']].drop_duplicates()
-caps_final = caps_clean.groupby(['Category'], sort=False).max('Max Point').reset_index()
-
-# make a list of unique values of Topic & Category
-topic = caps_clean['Topic'].unique()
-category = caps_clean['Category'].unique()
-# make a dictionary of Topic containing Category
-topic_dict = caps_topic.groupby(['Topic'], sort=False)['Category'].apply(list).to_dict()
+caps_final, topic_dict, list_df = func.data_prep(caps)
 
 # initiate empty list & counter
-list_df = []
 list_editor = []
 count = 0
-
-# split caps_clean into smaller dataframes for each Category, and save the dataframes to list_df
-for cat in category:
-    df = caps_clean.loc[caps_clean['Category'] == cat, ['Subcategory', 'Checks']]
-    list_df.append(df)
 
 # title & header
 st.title(f"Case: {case}")
@@ -79,33 +65,6 @@ st.header("Feedback")
 col1, col2 = st.columns(2)
 student = col1.text_input('Input Student Name', placeholder='Student Name')
 
-text_output = ""
-count_2 = 0
-
-for topic in topic_dict:
-    text_output += topic + '  \n'
-    for value in topic_dict[topic]:
-        earned = int(caps_final.loc[count_2, 'Earned'])
-        max_point = int(caps_final.loc[count_2, 'Max Point'])
-        icon = '✅' if earned == max_point else '❌'
-
-        text_output += f"{icon} [{earned}/{max_point}] {value}  \n"
-        count_2 +=1
-    text_output += '\n\n'
-
-
-feedback = gen.generate_text(student,
-                            case,
-                            text_output,
-                            total_earned)
+# generate feedback
+feedback = func.generate_text(case, student, topic_dict, caps_final, total_earned)
 feedback
-# # read text from template.txt
-# with open('template.txt', mode='r', encoding='utf-8') as f:
-#     content = f.read()
-#     temp = Template(content)
-#     feedback = temp.substitute(
-#         NAME = student,
-#         CASE = case,
-#         POINTS = text_output,
-#         EARNED = total_earned
-#         )
