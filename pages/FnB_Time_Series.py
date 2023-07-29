@@ -24,6 +24,7 @@ if 'button' not in st.session_state:
 def click_button():
     st.session_state.button = not st.session_state.button
 
+st.sidebar.write('Click this button to Reset!')
 st.sidebar.button('Reset', on_click=click_button)
 
 # sequentially shows: Topic, Category, and dataframes (small dataframes made above)
@@ -64,7 +65,8 @@ st.header("Feedback")
 
 col1, col2 = st.columns(2)
 student = col1.text_input('Input Student Name', placeholder='Student Name')
+honorific = col2.selectbox('Choose Honorific', ['Bapak', 'Ibu', 'Mas', 'Mbak', 'Kak'])
 
 # generate feedback
-feedback = func.generate_text(case, student, topic_dict, caps_final, total_earned)
+feedback = func.generate_text(case, student, honorific, topic_dict, caps_final, total_earned)
 feedback

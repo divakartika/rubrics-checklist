@@ -37,18 +37,18 @@ def final_txt(total_earned):
     
     return text
     
-def generate_text(case, student, topic_dict, caps_final, total_earned):
+def generate_text(case, student, honorific, topic_dict, caps_final, total_earned):
     text_output = ""
     count = 0
 
     for topic in topic_dict:
-        text_output += topic + '\n'
+        text_output += topic + '  \n'
         for value in topic_dict[topic]:
             earned = int(caps_final.loc[count, 'Earned'])
             max_point = int(caps_final.loc[count, 'Max Point'])
             icon = '✅' if earned == max_point else '❌'
 
-            text_output += f"- {icon} [{earned}/{max_point}] {value}\n"
+            text_output += f"{icon} [{earned}/{max_point}] {value}  \n"
             count +=1
         text_output += '\n\n'
 
@@ -60,6 +60,7 @@ def generate_text(case, student, topic_dict, caps_final, total_earned):
         final_text = final_txt(total_earned)
         # Subtitute
         feedback = temp.substitute(
+            HONORIFIC = honorific,
             NAME = student,
             CASE = case,
             POINTS = text_output,
