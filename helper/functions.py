@@ -7,6 +7,25 @@ from string import Template
 
 locale.setlocale(locale.LC_ALL, 'id_ID.UTF-8')
 
+def data_prep(caps):
+    # data wrangling
+    caps_clean = caps.ffill()
+    caps_topic = caps_clean[['Topic', 'Category']].drop_duplicates()
+    caps_final = caps_clean.groupby(['Category'], sort=False).max('Max Point').reset_index()
+
+    # make a list of unique values of Topic & Category
+    category = caps_clean['Category'].unique()
+    # make a dictionary of Topic containing Category
+    topic_dict = caps_topic.groupby(['Topic'], sort=False)['Category'].apply(list).to_dict()
+
+    list_df = []
+    # split caps_clean into smaller dataframes for each Category, and save the dataframes to list_df
+    for cat in category:
+        df = caps_clean.loc[caps_clean['Category'] == cat, ['Subcategory', 'Checks']]
+        list_df.append(df)
+    
+    return caps_final, topic_dict, list_df
+
 # cek
 def final_txt(total_earned):
     if total_earned >= 28:
@@ -18,7 +37,21 @@ def final_txt(total_earned):
     
     return text
     
-def generate_text(student, case, text_output, total_earned):
+def generate_text(case, student, topic_dict, caps_final, total_earned):
+    text_output = ""
+    count = 0
+
+    for topic in topic_dict:
+        text_output += topic + '\n'
+        for value in topic_dict[topic]:
+            earned = int(caps_final.loc[count, 'Earned'])
+            max_point = int(caps_final.loc[count, 'Max Point'])
+            icon = '✅' if earned == max_point else '❌'
+
+            text_output += f"- {icon} [{earned}/{max_point}] {value}\n"
+            count +=1
+        text_output += '\n\n'
+
     # read text from template.txt
     with open('helper/template.txt', mode='r', encoding='utf-8') as f:
         content = f.read()
