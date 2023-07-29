@@ -83,13 +83,13 @@ text_output = ""
 count_2 = 0
 
 for topic in topic_dict:
-    text_output += topic + '\n'
+    text_output += topic + '  \n'
     for value in topic_dict[topic]:
         earned = int(caps_final.loc[count_2, 'Earned'])
         max_point = int(caps_final.loc[count_2, 'Max Point'])
         icon = '✅' if earned == max_point else '❌'
 
-        text_output += f"- {icon} [{earned}/{max_point}] {value}\n"
+        text_output += f"{icon} [{earned}/{max_point}] {value}  \n"
         count_2 +=1
     text_output += '\n\n'
 

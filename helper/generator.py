@@ -10,11 +10,11 @@ locale.setlocale(locale.LC_ALL, 'id_ID.UTF-8')
 # cek
 def final_txt(total_earned):
     if total_earned >= 28:
-        text = "dan kami ucapkan selamat atas keberhasilannya dalam mengaplikasikan apa yang sudah dipelajari selama di kelas menjadi sebuah produk nyata. Keep up your good work!"
+        text = "dan kami ucapkan selamat atas keberhasilannya dalam mengaplikasikan apa yang sudah dipelajari selama di kelas terhadap real-world data. Keep up your good work!"
     else:
         dt = datetime.now() + timedelta(days=7)
         deadline = dt.strftime("%A, %d %B %Y").replace(" 0", " ")
-        text = f"Karena total skor yang anda peroleh memiliki nilai dibawah 28, kami akan memberikan kesempatan untuk melakukan revisi terhadap capstone project anda. Harap mengumpulkan hasil revisi paling lambat pada {deadline}, pukul 23.59 WIB. Ditunggu hasil revisinya!"
+        text = f"Karena total skor Anda kurang dari 28, kami memberikan kesempatan untuk melakukan revisi terhadap capstone project Anda.  Harap mengumpulkan hasil revisi paling lambat pada {deadline}, pukul 23.59 WIB. Kami tunggu hasil revisinya!"
     
     return text
     
