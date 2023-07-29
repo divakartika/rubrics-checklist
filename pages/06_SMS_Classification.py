@@ -5,10 +5,10 @@ from helper import functions as func
 from helper import template_app as temp_app
 
 # capstone case
-case = 'Concrete Prediction'
+case = 'SMS Classification'
 
 # read data & data preparation
-caps = pd.read_csv('data-input/ml_concrete_pred.csv')
+caps = pd.read_csv('data-input/ml_sms_class.csv')
 
 # build app
 temp_app.app(case, caps)
