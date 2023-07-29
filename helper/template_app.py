@@ -65,3 +65,9 @@ def app(case, caps):
     # generate feedback
     feedback = func.generate_text(case, student, honorific, topic_dict, caps_final, total_earned)
     st.write(feedback)
+
+    # warning box
+    st.warning("""To paste the text in Google Classroom, use **`CTRL+SHIFT+V`**
+               
+               \nUnless you want to make your text looks like a mess, don't use `CTRL+V` 
+               because this Streamlit uses Markdown formatting and Google Classroom uses Rich Text Formatting""")
