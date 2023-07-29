@@ -11,6 +11,7 @@ st.set_page_config(
 
 # get text from README.md
 with open('README.md', mode='r', encoding='utf-8') as f:
+    next(f) # skip the first line (a streamlit badge icon)
     content = f.read()
 
 content
