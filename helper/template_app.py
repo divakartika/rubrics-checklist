@@ -58,12 +58,13 @@ def app(case, caps):
     st.divider()
     st.header("Feedback")
 
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     student = col1.text_input('Input Student Name', placeholder='Student Name')
     honorific = col2.selectbox('Choose Honorific', ['Bapak', 'Ibu', 'Mas', 'Mbak', 'Kak'])
+    is_late = col3.selectbox('Is Late?', ['No', '1 Day', '2 Day', '3 Day', '4 Day', '> 4 Day'])
 
     # generate feedback
-    feedback = func.generate_text(case, student, honorific, topic_dict, caps_final, total_earned)
+    feedback = func.generate_text(case, student, honorific, topic_dict, caps_final, total_earned, is_late)
     st.write(feedback)
 
     # warning box
