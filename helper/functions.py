@@ -41,26 +41,30 @@ def final_txt(total_earned, is_late):
     minus_score, late_day = count_minus_score(is_late)
     total = total_earned - minus_score
     # template text
-    template = {'sukses': "Kami ucapkan selamat atas keberhasilannya dalam mengaplikasikan apa yang sudah dipelajari selama di kelas terhadap real-world data. Keep up your good work!",
-                'terlambat': "Karena ada keterlambatan %s dalam pengumpulan maka skor akan dikurangi sebanyak %i poin sehingga skor akhir yang Anda dapatkan adalah %i/36.",
-                'revisi': "Karena total skor rubrik Anda kurang dari 28, kami memberikan kesempatan untuk melakukan revisi terhadap capstone project Anda.  Harap mengumpulkan hasil revisi paling lambat pada %s, pukul 23.59 WIB. Kami tunggu hasil revisinya!"}
+    template = {'sukses': "Kami ucapkan selamat atas keberhasilannya dalam mengaplikasikan pembelajaran di kelas terhadap real-world data.",
+                'terlambat': f"Dengan keterlambatan pengumpulan {late_day} maka skor dikurangi {minus_score} poin, sehingga skor akhir yang Anda dapatkan adalah {total}/36.",
+                'revisi': "Karena skor rubrik Anda kurang dari 28, kami memberikan kesempatan bagi Anda untuk mengirimkan revisi capstone project hingga hari  %s, pukul 23.59 WIB. Maksimal skor rubrik setelah revisi adalah 28 poin jika seluruh rubrik terpenuhi.",
+                'closing_sukses': "Keep up your good work!",
+                'closing_revisi': "Kami tunggu hasil revisinya!"}
     # if >= 28 and not late
     if total_earned >= 28:
-        text = template['sukses']
+        closing = template['closing_sukses']
+        text = f"{template['sukses']} {closing}"
         # if >=28 and late
         if minus_score:
             # generate terlambat template and concat with "">= 28 and not late" text
-            text = f"{template['terlambat'] % (late_day, minus_score, total)} {text}"
+            text = f"{template['terlambat']}\n\n{text}"
     # if < 28
     else:
         dt = datetime.now() + timedelta(days=7)
         deadline = dt.strftime("%A, %d %B %Y").replace(" 0", " ")
         # generate revisi text from tempalte
+        closing = template['closing_revisi']
         text = template['revisi'] % deadline
         # if < 28 and late
         if minus_score:
             # generate from terlambat template and concat with revisi text
-            text = f"{template['terlambat'] % (late_day, minus_score, total)} Dan {text}"
+            text = f"{text}\n\n{template['terlambat']} {closing}"
     
     return text
     

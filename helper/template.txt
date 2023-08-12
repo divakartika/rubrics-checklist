@@ -8,7 +8,7 @@ Berikut additional feedback dari kami:
 
 -
 
-Total skor yang Anda peroleh adalah ${EARNED} dari 36. ${FINAL_TEXT}
+Skor rubrik yang Anda peroleh adalah ${EARNED} dari 36. ${FINAL_TEXT}
 
 Best regards,  
 Team Algoritma
