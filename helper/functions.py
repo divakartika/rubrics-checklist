@@ -60,11 +60,11 @@ def final_txt(total_earned, is_late):
         deadline = dt.strftime("%A, %d %B %Y").replace(" 0", " ")
         # generate revisi text from tempalte
         closing = template['closing_revisi']
-        text = template['revisi'] % deadline
+        text = f"{template['revisi'] % deadline} {closing}"
         # if < 28 and late
         if minus_score:
             # generate from terlambat template and concat with revisi text
-            text = f"{text}\n\n{template['terlambat']} {closing}"
+            text = f"{template['revisi'] % deadline}\n\n{template['terlambat']} {closing}"
     
     return text
     
