@@ -68,7 +68,9 @@ def app(case, caps):
     st.write(feedback)
 
     # warning box
-    st.warning("""To paste the text in Google Classroom, use **`CTRL+SHIFT+V`**
+    st.warning(""":warning: WARNING
+               
+               \nTo paste the text in Google Classroom, use **`CTRL+SHIFT+V`**
                
                \nUnless you want to make your text looks like a mess, don't use `CTRL+V` 
                because this Streamlit uses Markdown formatting and Google Classroom uses Rich Text Formatting""")
