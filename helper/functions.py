@@ -42,10 +42,11 @@ def final_txt(total_earned, is_late):
     total = total_earned - minus_score
     # template text
     template = {'sukses': "Kami ucapkan selamat atas keberhasilannya dalam mengaplikasikan pembelajaran di kelas terhadap real-world data.",
-                'terlambat': f"Dengan keterlambatan pengumpulan {late_day} maka skor dikurangi {minus_score} poin, sehingga skor akhir yang Anda dapatkan adalah {total}/36.",
-                'revisi': "Karena skor rubrik Anda kurang dari 28, kami memberikan kesempatan bagi Anda untuk mengirimkan revisi capstone project hingga hari  %s, pukul 23.59 WIB. Maksimal skor rubrik setelah revisi adalah 28 poin jika seluruh rubrik terpenuhi.",
+                'terlambat': f"Dengan keterlambatan pengumpulan {late_day} (-{minus_score} poin), skor akhir yang Anda dapatkan adalah {total}/36.",
+                'revisi': "Karena skor rubrik < 28, Anda diperbolehkan untuk merevisi capstone project.",
                 'closing_sukses': "Keep up your good work!",
-                'closing_revisi': "Kami tunggu hasil revisinya!"}
+                'closing_terlambat': f" dikurangi penalti keterlambatan (28 - {minus_score} = {28-minus_score} poin)",
+                'closing_revisi': "Maksimal skor setelah revisi adalah 28%s. Silakan mengirimkan revisi hingga hari %s, pukul 23.59 WIB. Kami tunggu hasil revisinya!"}
     # if >= 28 and not late
     if total_earned >= 28:
         closing = template['closing_sukses']
@@ -60,11 +61,12 @@ def final_txt(total_earned, is_late):
         deadline = dt.strftime("%A, %d %B %Y").replace(" 0", " ")
         # generate revisi text from tempalte
         closing = template['closing_revisi']
-        text = f"{template['revisi'] % deadline} {closing}"
+        text = f"{template['revisi']} {closing  % ('', deadline)}"
         # if < 28 and late
         if minus_score:
+            closing_terlambat = template['closing_terlambat']
             # generate from terlambat template and concat with revisi text
-            text = f"{template['revisi'] % deadline}\n\n{template['terlambat']} {closing}"
+            text = f"{template['revisi']}\n\n{template['terlambat']} {closing % (closing_terlambat, deadline)}"
     
     return text
     
