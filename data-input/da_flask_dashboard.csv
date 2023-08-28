@@ -1,0 +1,11 @@
+Topic,Category,Subcategory,Checks,Max Point,Earned
+Flask Dashboard UI,Setting Repository Github dan Environment,Create new Github Repository,FALSE,2,0
+,,Create new virtual environment,FALSE,,
+,,Install dependency libraries in virtual environment,FALSE,,
+,Data Pre-processing and Exploratory Data Analysis,Data Pre-processing and Exploratory Data Analysis,FALSE,2,0
+,Data Wrangling,Data Wrangling,FALSE,4,0
+,Data Visualization: Create or duplicate bar plot,Create or duplicate bar plot,FALSE,1,0
+,Data Visualization: Create or duplicate scatter plot,Create or duplicate scatter plot,FALSE,1,0
+,Data Visualization: Create or duplicate histogram plot,Create or duplicate histogram plot,FALSE,1,0
+,Data Visualization: Create an additional plot,Create an additional plot,FALSE,1,0
+,Build Flask App,Build Flask App,FALSE,4,0

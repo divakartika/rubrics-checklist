@@ -1,0 +1,6 @@
+Topic,Category,Subcategory,Checks,Max Point,Earned
+Web Scraping,Environment preparation,Environment preparation,FALSE,2,0
+,Finding the right key to scrap the data & Extracting the right information,Finding the right key to scrap the data & Extracting the right information,FALSE,5,0
+,Creating data frame & Data wrangling,Creating data frame & Data wrangling,FALSE,5,0
+,Creating a tidy python notebook as a report,Creating a tidy python notebook as a report,FALSE,2,0
+,Implement it on Flask dashboard,Implement it on Flask dashboard,FALSE,2,0
