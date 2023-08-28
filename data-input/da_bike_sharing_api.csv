@@ -1,0 +1,13 @@
+Topic,Category,Subcategory,Checks,Max Point,Earned
+Bike Sharing API,Created Flask App,create app.py file to make flask app,FALSE,1,0
+,,create Flask app to execute all of the endpoint you have made,FALSE,,
+,Created functionality to read or get specific data from the database,create query to read data from database,FALSE,2,0
+,,create function to execute read specific information into table from database,FALSE,,
+,Created functionality to input new data into each table for the databases,create query to insert new data into stations and trips table,FALSE,4,0
+,,create function to execute input data into stations and trips table,FALSE,,
+,"Created static endpoints which return analytical result (must be different from point 2,3)",create query to make analytical resultfrom the data,FALSE,3,0
+,,"create static endpoint to analyze the data from database, for example average trip durations",FALSE,,
+,"Created dynamic endpoints which return analytical result (must be different from point 2,3,4)",create query to make analytical resultfrom the data,FALSE,3,0
+,,"create dinamic endpoint to analyze the data from database, for example average trip durations for each bike_id",FALSE,,
+,"Created POST endpoint which receive input data, then utilize it to get analytical result (must be different from point 2,3,4,5)",create input data for refering into query for post endpoint,FALSE,3,0
+,,make query and aggregation function to implement the input,FALSE,,

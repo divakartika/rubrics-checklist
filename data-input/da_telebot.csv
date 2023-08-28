@@ -1,0 +1,17 @@
+Topic,Category,Subcategory,Checks,Max Point,Earned
+Telegram Chatbot,Setup,Prepare Virtual Environment,FALSE,3,0
+,,Create telegram bot TOKEN via BotFather,FALSE,,
+,,Using os.environ to secure TOKEN,FALSE,,
+,Chatbot Functionality - Basic Function,Create command /start or /help,FALSE,3,0
+,,Create command /about,FALSE,,
+,,Create function echo_all(),FALSE,,
+,Chatbot Functionality - Summary text report: /summary,Perform necessary data wrangling steps to extract information,FALSE,3,0
+,,Perform the right mathematical calculation,FALSE,,
+,,Send summary message using Template,FALSE,,
+,Chatbot Functionality - Visualization report: /plot,Perform necessary data wrangling steps to extract information,FALSE,4,0
+,,Perform the right mathematical calculation,FALSE,,
+,,Send plot with caption,FALSE,,
+,,"Tidy plot layout (title, label, color, size)",FALSE,,
+,Application deployment,Using Flask to serve the chatbot as an application,FALSE,3,0
+,,Deploy to Railway,FALSE,,
+,,Deployed chatbot run smoothly without error,FALSE,,
