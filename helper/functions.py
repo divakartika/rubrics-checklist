@@ -1,4 +1,5 @@
 import locale
+import math
 from string import Template
 from datetime import datetime
 from datetime import timedelta
@@ -35,40 +36,47 @@ def count_minus_score(is_late):
     # return minus score with late day in bahasa ("2 day" is not grammatically correct tho, it is on purpose for the sake of simplicity)
     return minus_score[is_late], is_late.replace('Day', 'hari')
 
-# check if score >= 28 (minimum score)
-def final_txt(total_earned, is_late):
+# check if score >= minimum_points
+def final_txt(total_earned, is_late, caps_final):
     # get minus skor and late day in bahasa, just changing the day -> hari :(
     minus_score, late_day = count_minus_score(is_late)
     total = total_earned - minus_score
+
+    # get total points from data_prep function
+    total_points = int(caps_final['Max Point'].sum())
+    minimum_points = math.floor(0.8*total_points)
+
+    days = 3 if total_points == 16 else 7
+
     # template text
     template = {'sukses': "Kami ucapkan selamat atas keberhasilannya dalam mengaplikasikan pembelajaran di kelas terhadap real-world data.",
-                'terlambat': f"Dengan keterlambatan pengumpulan {late_day} (-{minus_score} poin), skor akhir yang Anda dapatkan adalah {total}/36.",
-                'revisi': "Karena skor rubrik < 28, Anda diperbolehkan untuk merevisi capstone project.",
+                'terlambat': f"Dengan keterlambatan pengumpulan {late_day} (-{minus_score} poin), skor akhir yang Anda dapatkan adalah {total}/{total_points}.",
+                'revisi': f"Karena skor rubrik < {minimum_points}, Anda diperbolehkan untuk merevisi capstone project.",
                 'closing_sukses': "Keep up your good work!",
-                'closing_terlambat': f" dikurangi penalti keterlambatan (28 - {minus_score} = {28-minus_score} poin)",
-                'closing_revisi': "Maksimal skor setelah revisi adalah 28%s. Silakan mengirimkan revisi hingga hari %s, pukul 23.59 WIB. Kami tunggu hasil revisinya!"}
-    # if >= 28 and not late
-    if total_earned >= 28:
+                'closing_terlambat': f" dikurangi penalti keterlambatan ({minimum_points} - {minus_score} = {minimum_points-minus_score} poin)",
+                'closing_revisi': f"Maksimal skor setelah revisi adalah {minimum_points}%s. Silakan mengirimkan revisi hingga hari %s, pukul 23.59 WIB. Kami tunggu hasil revisinya!"}
+    # if >= minimum_points and not late
+    if total_earned >= minimum_points:
         closing = template['closing_sukses']
         text = f"{template['sukses']} {closing}"
-        # if >=28 and late
+        # if >= minimum_points and late
         if minus_score:
-            # generate terlambat template and concat with "">= 28 and not late" text
+            # generate terlambat template and concat with "">= minimum_points and not late" text
             text = f"{template['terlambat']}\n\n{text}"
-    # if < 28
+    # if < minimum_points
     else:
-        dt = datetime.now() + timedelta(days=7)
+        dt = datetime.now() + timedelta(days)
         deadline = dt.strftime("%A, %d %B %Y").replace(" 0", " ")
         # generate revisi text from tempalte
         closing = template['closing_revisi']
         text = f"{template['revisi']} {closing  % ('', deadline)}"
-        # if < 28 and late
+        # if < minimum_points and late
         if minus_score:
             closing_terlambat = template['closing_terlambat']
             # generate from terlambat template and concat with revisi text
             text = f"{template['revisi']}\n\n{template['terlambat']} {closing % (closing_terlambat, deadline)}"
     
-    return text
+    return text, total_points
     
 def generate_text(case, student, honorific, topic_dict, caps_final, total_earned, is_late):
     text_output = ""
@@ -90,7 +98,7 @@ def generate_text(case, student, honorific, topic_dict, caps_final, total_earned
         content = f.read()
         temp = Template(content)
         # determine the final text based on score
-        final_text = final_txt(total_earned, is_late)
+        final_text, total_points = final_txt(total_earned, is_late, caps_final)
         # Subtitute
         feedback = temp.substitute(
             HONORIFIC = honorific,
@@ -98,6 +106,7 @@ def generate_text(case, student, honorific, topic_dict, caps_final, total_earned
             CASE = case,
             POINTS = text_output,
             EARNED = total_earned,
+            TOTAL_POINTS = total_points,
             FINAL_TEXT = final_text
         )
     
