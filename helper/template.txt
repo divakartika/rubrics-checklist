@@ -1,6 +1,6 @@
 Dear ${HONORIFIC} ${NAME},
 
-Terima kasih telah mengumpulkan Capstone Machine Learning, Case: ${CASE}. Berikut penilaian dan feedback yang dapat kami sampaikan berdasarkan capstone yang telah Anda kerjakan:
+Terima kasih telah mengumpulkan Capstone Case: ${CASE}. Berikut penilaian dan feedback yang dapat kami sampaikan berdasarkan capstone yang telah Anda kerjakan:
 
 ${POINTS}
 
