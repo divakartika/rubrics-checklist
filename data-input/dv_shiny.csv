@@ -1,19 +1,19 @@
-Topic,Category,Subcategory,Checks,Max Point,Earned,Explanation
-Input (reactivity),Using min. 2 different input type,Using min. 2 different input type,FALSE,2,0,"The dashboard should contain at least 2 different input types. For example, there is a slider input and select input on the dashboard. If the dashboard only has 2 select inputs or 2 similar inputs, it will be counted as one."
-,Choosing appropriate input type,Choosing appropriate input type,FALSE,2,,"All input should have an appropriate user interface. For example, a date should not use a select input but instead use the proper date input or date range input."
-,Demonstrating useful input(s),Demonstrating useful input(s),FALSE,2,,The dashboard should have input widgets that would give the user the ability to explore the data. Some useful input including filtering data with slider input or selecting different categories with select input. Less useful input including changing the color of the plot.
-Tab (paging),Using min. 3 page,Using min. 3 page,FALSE,3,,The dashboard should contain at least 3 different tabs/page that convey different information.
-Render plot,Using interactive plot,Using interactive plot,FALSE,1,,"All plots should be presented as interactive plots. You can either use [plotly](https://plotly.com/r/), [highcharter](https://jkunst.com/highcharter/), [echarts4r](https://echarts4r.john-coene.com/), or other interactive plot packages in R."
-,Using min. 2 plot type,Using min. 2 plot type,FALSE,2,,"The dashboard should contain at least 2 different plot types. We expect you can explore different visualizations to convey different information. For example, a dashboard contains 2 different plots: a bar chart and a line plot. The number of plots itself is not limited."
-,Choosing the appropriate plot type,Choosing the appropriate plot type,FALSE,2,,"All information should be presented with appropriate plots. For example, if you want to show categorical ranking, you can use bar chart or lollipop chart. You can refer to [data-to-viz](https://www.data-to-viz.com/) for guidance."
-,Demonstrating reactivity from the input,Demonstrating reactivity from the input,FALSE,2,,The plot should be able to react to the change given by input.
-,Creating plots that tell a clear story,Creating plots that tell a clear story,FALSE,2,,All plots should have clear information and are easy to understand. There should be at least a plot title and clear axis title. You can refer to [this notes](https://clauswilke.com/dataviz/introduction.html#ugly-bad-and-wrong-figures) regarding this problem.
-Deploy,Successfully deploying to shinyapps.io,Successfully deploying to shinyapps.io,FALSE,6,,The dashboard should be deployed to [shinyapps.io](https://www.shinyapps.io/admin/#/dashboard) and contain no error after being deployed.
+Topic,Category,Subcategory,Checks,Max Point,Earned,Explanation,Plot,Caption
+Input (reactivity),Using min. 2 different input type,Using min. 2 different input type,FALSE,2,0,"The dashboard should contain at least 2 different input types. For example, there is a slider input and select input on the dashboard. If the dashboard only has 2 select inputs or 2 similar inputs, it will be counted as one.",https://github.com/divakartika/rubrics-checklist/blob/main/assets/221_01_input_multi.png?raw=true,
+,Choosing appropriate input type,Choosing appropriate input type,FALSE,2,,"All input should have an appropriate user interface. For example, a date should not use a select input but instead use the proper date input or date range input.",https://github.com/divakartika/rubrics-checklist/blob/main/assets/221_02_wrong_input.png?raw=true,
+,Demonstrating useful input(s),Demonstrating useful input(s),FALSE,2,,The dashboard should have input widgets that would give the user the ability to explore the data. Some useful input including filtering data with slider input or selecting different categories with select input. Less useful input including changing the color of the plot.,,
+Tab (paging),Using min. 3 page,Using min. 3 page,FALSE,3,,The dashboard should contain at least 3 different tabs/page that convey different information.,https://github.com/divakartika/rubrics-checklist/blob/main/assets/222_21_tab.png?raw=true,
+Render plot,Using interactive plot,Using interactive plot,FALSE,1,,"All plots should be presented as interactive plots. You can either use [plotly](https://plotly.com/r/), [highcharter](https://jkunst.com/highcharter/), [echarts4r](https://echarts4r.john-coene.com/), or other interactive plot packages in R.",,
+,Using min. 2 plot type,Using min. 2 plot type,FALSE,2,,"The dashboard should contain at least 2 different plot types. We expect you can explore different visualizations to convey different information. For example, a dashboard contains 2 different plots: a bar chart and a line plot. The number of plots itself is not limited.",,
+,Choosing the appropriate plot type,Choosing the appropriate plot type,FALSE,2,,"All information should be presented with appropriate plots. For example, if you want to show categorical ranking, you can use bar chart or lollipop chart. You can refer to [data-to-viz](https://www.data-to-viz.com/) for guidance.","https://github.com/divakartika/rubrics-checklist/blob/main/assets/223_01_datatoviz.png?raw=true, https://github.com/divakartika/rubrics-checklist/blob/main/assets/223_02_wrong_plot.png?raw=true",
+,Demonstrating reactivity from the input,Demonstrating reactivity from the input,FALSE,2,,The plot should be able to react to the change given by input.,https://github.com/divakartika/rubrics-checklist/blob/main/assets/223_03_app_simple_view.gif?raw=true,
+,Creating plots that tell a clear story,Creating plots that tell a clear story,FALSE,2,,All plots should have clear information and are easy to understand. There should be at least a plot title and clear axis title. You can refer to [this notes](https://clauswilke.com/dataviz/introduction.html#ugly-bad-and-wrong-figures) regarding this problem.,https://github.com/divakartika/rubrics-checklist/blob/main/assets/223_04_ugly-bad-wrong-examples-1.png?raw=true,
+Deploy,Successfully deploying to shinyapps.io,Successfully deploying to shinyapps.io,FALSE,6,,The dashboard should be deployed to [shinyapps.io](https://www.shinyapps.io/admin/#/dashboard) and contain no error after being deployed.,,
 User Interface Appearence,Have tidy page layout,Have tidy page layout,FALSE,2,,"We don't expect you to be a great UI designer. However, your dashboard page should be tidy and clean enough to watch. Some considerations to help you create a tidy page including:
 
 1. Each tab/page should not too long and has distinct topics
 2. Be consistent, e.g. all texts are in English and consistent color themes
-3. Page should be filled thoroughly with content without leaving any blank spaces in a full-width length of a page."
+3. Page should be filled thoroughly with content without leaving any blank spaces in a full-width length of a page.","https://github.com/divakartika/rubrics-checklist/blob/main/assets/225_01_less_tidy.png?raw=true, https://github.com/divakartika/rubrics-checklist/blob/main/assets/225_02_tidy_page.png?raw=true","Less Tidy Page, Tidy Page"
 ,Have tidy plot layout,Have tidy plot layout,FALSE,2,,"Some considerations to help you create a tidy plot including:
 
 1. Have clear plot title and axis title
@@ -21,7 +21,7 @@ User Interface Appearence,Have tidy page layout,Have tidy page layout,FALSE,2,,"
 3. Numeric axis text should be formatted such that every 3 digit is separated by comma (20,000 instead of 20000)
 4. Ranking is presented with clear order (ascending or descending), for example when you present top 10 product name or top 10 customer
 5. Have consistent themes for all plots
-6. No overlapping axis text, long text should not be rotated with 90% degree rotation. Some [tips](https://datavizpyr.com/how-to-dodge-overlapping-text-on-x-axis-labels-in-ggplot2/)"
+6. No overlapping axis text, long text should not be rotated with 90% degree rotation. Some [tips](https://datavizpyr.com/how-to-dodge-overlapping-text-on-x-axis-labels-in-ggplot2/)",https://github.com/divakartika/rubrics-checklist/blob/main/assets/225_03_tidy_plot.png?raw=true,
 ,Have appropriate plot tooltip,Have appropriate plot tooltip,FALSE,1,,"The plot should have a customized tooltip that has a clear and easy to read popup text.
 
 *Bad Tooltip*
@@ -39,5 +39,7 @@ lifeExp: 56.735
 Gabon (name of the country)
 GDP per Capita: 13,206.48
 Life Expectancy: 56.735
-``` "
-,Choosing right color scheme,Choosing right color scheme,FALSE,1,,Color must be carefully chosen to serve a purpose and it must be clear and do not distract the reader. One of the most common pitfalls is using color for bar charts when a large number of categories are present. You can read more about issues of color usage in [this book’s chapter](https://clauswilke.com/dataviz/color-pitfalls.html).
+```
+
+",https://github.com/divakartika/rubrics-checklist/blob/main/assets/225_04_tooltip.png?raw=true,
+,Choosing right color scheme,Choosing right color scheme,FALSE,1,,Color must be carefully chosen to serve a purpose and it must be clear and do not distract the reader. One of the most common pitfalls is using color for bar charts when a large number of categories are present. You can read more about issues of color usage in [this book’s chapter](https://clauswilke.com/dataviz/color-pitfalls.html).,https://github.com/divakartika/rubrics-checklist/blob/main/assets/225_05_bad_color.png?raw=true,
