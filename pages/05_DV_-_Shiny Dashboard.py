@@ -1,13 +1,11 @@
 import pandas as pd
-from helper import template_app as temp_app
+from helper import dv_app as temp_app
 
 # capstone case
 case = 'Shiny Dashboard'
 
 # read data & data preparation
-#caps = pd.read_csv('data-input/ml_concrete_pred.csv')
+caps = pd.read_csv('data-input/dv_shiny.csv')
 
 # build app
-#temp_app.app(case, caps)
-
-"# Coming soon!"
+temp_app.app(case, caps)
