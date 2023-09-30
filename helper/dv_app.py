@@ -81,4 +81,4 @@ def app(case, caps):
                \nTo paste the text in Google Classroom, use **`CTRL+SHIFT+V`**
                
                \nUnless you want to make your text looks like a mess, don't use `CTRL+V` 
-               because this Streamlit uses Markdown formatting and Google Classroom uses Rich Text Formatting""")
+               because Streamlit uses Markdown formatting and Google Classroom uses Rich Text Formatting""")
