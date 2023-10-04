@@ -9,12 +9,14 @@ Render plot,Using interactive plot,Using interactive plot,FALSE,1,,"All plots sh
 ,Demonstrating reactivity from the input,Demonstrating reactivity from the input,FALSE,2,,The plot should be able to react to the change given by input.,https://github.com/divakartika/rubrics-checklist/blob/main/assets/223_03_app_simple_view.gif?raw=true,
 ,Creating plots that tell a clear story,Creating plots that tell a clear story,FALSE,2,,All plots should have clear information and are easy to understand. There should be at least a plot title and clear axis title. You can refer to [this notes](https://clauswilke.com/dataviz/introduction.html#ugly-bad-and-wrong-figures) regarding this problem.,https://github.com/divakartika/rubrics-checklist/blob/main/assets/223_04_ugly-bad-wrong-examples-1.png?raw=true,
 Deploy,Successfully deploying to shinyapps.io,Successfully deploying to shinyapps.io,FALSE,6,,The dashboard should be deployed to [shinyapps.io](https://www.shinyapps.io/admin/#/dashboard) and contain no error after being deployed.,,
-User Interface Appearence,Have tidy page layout,Have tidy page layout,FALSE,2,,"We don't expect you to be a great UI designer. However, your dashboard page should be tidy and clean enough to watch. Some considerations to help you create a tidy page including:
+User Interface Appearence,Have tidy page layout,Each tab/page should not too long and has distinct topics,FALSE,2,,"We don't expect you to be a great UI designer. However, your dashboard page should be tidy and clean enough to watch. Some considerations to help you create a tidy page including:
 
 1. Each tab/page should not too long and has distinct topics
 2. Be consistent, e.g. all texts are in English and consistent color themes
 3. Page should be filled thoroughly with content without leaving any blank spaces in a full-width length of a page.","https://github.com/divakartika/rubrics-checklist/blob/main/assets/225_01_less_tidy.png?raw=true, https://github.com/divakartika/rubrics-checklist/blob/main/assets/225_02_tidy_page.png?raw=true","Less Tidy Page, Tidy Page"
-,Have tidy plot layout,Have tidy plot layout,FALSE,2,,"Some considerations to help you create a tidy plot including:
+,,"Be consistent, e.g. all texts are in English and consistent color themes",FALSE,,,,,
+,,Page should be filled thoroughly with content without leaving any blank spaces in a full-width length of a page.,FALSE,,,,,
+,Have tidy plot layout,Have clear plot title and axis title,FALSE,2,,"Some considerations to help you create a tidy plot including:
 
 1. Have clear plot title and axis title
 2. Text is readable and contrast with the background (if background is in dark color, the text should be in light color, and vice versa)
@@ -22,6 +24,11 @@ User Interface Appearence,Have tidy page layout,Have tidy page layout,FALSE,2,,"
 4. Ranking is presented with clear order (ascending or descending), for example when you present top 10 product name or top 10 customer
 5. Have consistent themes for all plots
 6. No overlapping axis text, long text should not be rotated with 90% degree rotation. Some [tips](https://datavizpyr.com/how-to-dodge-overlapping-text-on-x-axis-labels-in-ggplot2/)",https://github.com/divakartika/rubrics-checklist/blob/main/assets/225_03_tidy_plot.png?raw=true,
+,,"Text is readable and contrast with the background (if background is in dark color, the text should be in light color, and vice versa)",FALSE,,,,,
+,,"Numeric axis text should be formatted such that every 3 digit is separated by comma (20,000 instead of 20000)",FALSE,,,,,
+,,"Ranking is presented with clear order (ascending or descending), for example when you present top 10 product name or top 10 customer",FALSE,,,,,
+,,Have consistent themes for all plots,FALSE,,,,,
+,,"No overlapping axis text, long text should not be rotated with 90% degree rotation",FALSE,,,,,
 ,Have appropriate plot tooltip,Have appropriate plot tooltip,FALSE,1,,"The plot should have a customized tooltip that has a clear and easy to read popup text.
 
 *Bad Tooltip*

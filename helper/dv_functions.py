@@ -12,7 +12,7 @@ def data_prep(caps):
     caps_clean = caps.copy()
     caps_clean.iloc[:,:-2] = caps_clean.iloc[:,:-2].ffill()
     caps_clean.iloc[:,-2:] = caps_clean.iloc[:,-2:].replace(np.nan, None)
-    caps_topic = caps_clean[['Topic', 'Category', 'Explanation', 'Plot', 'Caption']].drop_duplicates()
+    caps_topic = caps_clean[['Topic', 'Category', 'Explanation', 'Plot', 'Caption']].drop_duplicates(subset=['Topic', 'Category', 'Explanation'])
     caps_final = caps_clean.groupby(['Category'], sort=False).max(numeric_only = True).reset_index()
 
     # make a list of unique values of Topic & Category
